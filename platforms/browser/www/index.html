@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> SeaFour </title>
+
+        <link rel="stylesheet" href="css/index.css" type="text/css" />
+        <link rel="stylesheet" href="css/parser.css" type="text/css" />
+
+        <link rel="stylesheet" href="css/fontawesome.css" type="text/css" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, target-densitydpi=medium-dpi, user-scalable=0" />
+    </head>
+
+    <!--
+        PROMPT
+    -->
+
+    <div id="prompt" class="close">
+        <button class="fontawesome-remove" id="closePrompt"></button>
+
+        <div id="authenticateForm" class="form">
+            <input type="text" name="Handle" placeholder="Handle"/>
+            <input type="password" name="PassPhrase" placeholder="Pass Phrase"/>
+            <button class="fontawesome-user left" id="authenticate"> Authenticate </button>
+            <button class="fontawesome-arrow-right right" id="goToSignup"> Sign Up </button>
+        </div>
+
+        <div id="signupForm" class="form">
+            <input type="text" name="Handle" placeholder="Handle"/>
+            <input type="password" name="PassPhrase" placeholder="Pass Phrase"/>
+            <input type="password" name="PassPhrase" placeholder="Confirm Pass Phrase"/>
+            <button class="fontawesome-arrow-left left" id="goToAuthenticate"> Authenticate </button>
+            <button class="fontawesome-user right" id="signup"> Sign Up </button>
+        </div>
+
+        <div id="addroomForm" class="form">
+            <input type="text" name="Handle" placeholder="Room's Name"/>
+            <button class="fontawesome-plus left"> Add This Room </button>
+        </div>
+
+        <div id="adduserForm" class="form">
+            <input type="text" name="Handle" placeholder="User's Handle"/>
+            <button class="fontawesome-plus left"> Add This User </button>
+        </div>
+
+    </div>
+
+    <!--
+        RECEIVED MESSAGES
+    -->
+
+    <div id="receivedMessages">
+    </div>
+    <div id="messageInputBox">
+        <textarea id="messageText" placeholder="Type your message here..."></textarea>
+        <button class="fontawesome-ok" id="submitButton"></button>
+    </div>
+
+    <!--
+        SIDE MENU
+    -->
+
+    <button class="fontawesome-th-list close" id="menuButton"></button>
+    <div id="sideMenu" class="close">
+
+        <div id="topButtons">
+            <button class="fontawesome-user" id="login"> Account </button>
+        </div>
+
+        <h2>
+            Rooms
+            <button class="fontawesome-plus" id="addRoom"></button>
+        </h2>
+        <div class="sideMenuButtons" id="sideMenuRooms">
+            <!-- Room buttons get appended here. -->
+        </div>
+
+        <h2>
+            Users
+            <button class="fontawesome-plus" id="addUser"></button>
+        </h2>
+        <div class="sideMenuButtons" id="sideMenuUsers">
+            <!-- User buttons get appended here. -->
+            <div class="user" name="xultra"> Xultra </div>
+        </div>
+
+        <h2>
+            Options
+            <button class="fontawesome-cog"></button>
+        </h2>
+        <div class="sideMenuButtons" id="sideMenuOptions">
+            <!-- Options buttons get appended here. -->
+            <div class="option fontawesome-building" name="server"> Server </div>
+            <div class="option fontawesome-cogs" name="settings"> Settings </div>
+        </div>
+
+    </div>
+
+    <!--
+        JAVASCRIPT ASSETS
+    -->
+
+    <script type="text/javascript" src="cordova.js"></script>
+
+    <!-- Cryptography Related Scripts (VERY IMPORTANT) -->
+    <script src="/js/crypto/sjcl/sjcl.js"></script> <!-- Stanford JS Crypto lib, used for pbkdf2 symmetric encryption. -->
+    <script src="/js/crypto/ellipticBrowserify.js"></script>
+
+    <!-- SeaFour made assets. -->
+    <script type="text/javascript" src="js/Parser.js"></script>
+    <script type="text/javascript" src="js/SeaFourClient.js"></script>
+    <script type="text/javascript" src="js/ClientUI.js"></script>
+
+</html>

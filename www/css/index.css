@@ -1,0 +1,308 @@
+/*\
+
+$colors: (
+    primary: #db9f9e,
+    secondary: #65a4b2,
+    friendly: #93d4e2
+    danger: #db9f9e,
+    light: #fff,
+    dark: #666
+);
+
+\*/
+
+
+/*
+    CHAT BOX
+*/
+
+html, body {
+    padding: 0;
+    margin: 0;
+    color: #666;
+    font-family: 'Arial', 'Helvetica', sans-serif;
+    background: url("assets/pinkMist.png");
+}
+
+* {
+    outline: none;
+}
+
+textarea {
+    background-color: #fff;
+    color: #666;
+    font-family: 'Arial', 'Helvetica', sans-serif;
+    border: 0;
+    margin: 0;
+    box-shadow: 0px 1px 3px rgba(0,0,0, 0.4) inset;
+    resize: none;
+}
+
+#messageInputBox {
+    background-color: #fff;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 0px 5px;
+    padding-top: 5px;
+    box-shadow: 0px 1px 4px rgba(0,0,0, 0.4);
+}
+
+#messageText {
+    font-size: 1.2em;
+    width: calc(100% - 50px);
+    height: 50px;
+}
+
+#submitButton {
+    color: #db9f9e;
+    background-color: Transparent;
+    border: 0;
+    height: 50px;
+    width: 30px;
+    float: right;
+    margin-right: 10px;
+    font-size: 1.2em;
+
+    cursor: pointer; /* I don't need this. */
+}
+
+#receivedMessages {
+    margin: 0px;
+    position: fixed;
+    width: 100%;
+    height: calc(100% - 63px);
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.topic {
+    padding: 10px;
+    font-size: 2em;
+    color: #fff;
+    text-shadow: 0px 1px 2px rgba(0,0,0, 0.4);
+    text-align: center;
+}
+
+.message {
+    width: calc( 100% - 30px );
+    box-shadow: 0px 1px 2px rgba(0,0,0, 0.4);
+    background-color: #fff;
+    margin: 5px;
+    padding: 10px;
+    font-size: 1.2em;
+    overflow: hidden;
+}
+
+.username {
+    color: #a7a7a7;
+    font-size: .9em;
+    display: block;
+    border-bottom: 1px solid #aaa;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+}
+.id {
+    font-size: .9em;
+    padding-right: 5px;
+    color: #65a4b2;
+    float: right;
+}
+.postContent {
+}
+
+/* 
+    SIDE MENU
+*/
+
+#menuButton {
+    text-shadow: 0px 1px 2px rgba(0,0,0, 0.4);
+    color: #fff;
+    font-size: 2em;
+    background-color: Transparent;
+    border: 0;
+    position: fixed;
+    top: 5px;
+    left: 5px;
+    height: 50px;
+    width: 50px;
+    transition: color 0.25s;
+
+    z-index: 2;
+}
+
+#menuButton.close {
+}
+
+#sideMenu {
+    background-color: #fff;
+    box-shadow: 0px 1px 2px rgba(0,0,0, 0.4);
+    padding-top: 50px;
+    padding-left: 15px;
+    width: 300px;
+    height: calc(100% - 50px);
+    position: fixed;
+    transition: width 0.25s, opacity .24s, padding 0.25s;
+    white-space: nowrap;
+    overflow-x: hidden;
+
+    z-index: 1;
+}
+
+#sideMenu.close {
+    width: 0px;
+    padding: 0;
+    opacity: 0.6;
+}
+
+#sideMenu #topButtons {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    margin: 15px;
+    padding: 0px;
+}
+
+#sideMenu #login {
+    margin: 0px;
+    border: none;
+    border-left: 2px solid #93d4e2;
+    background-color: #fff;
+    color: #65a4b2;
+    font-size: 1em;
+    box-shadow: 0px 1px 2px rgba(0,0,0, 0.4);
+    padding: 10px;
+}
+
+#sideMenu #server {
+    margin: 0px;
+    margin-right: 15px;
+    border: none;
+    border-left: 2px solid #db9f9e;
+    background-color: #fff;
+    color: #db9f9e;
+    font-size: 1em;
+    box-shadow: 0px 1px 2px rgba(0,0,0, 0.4);
+    padding: 10px;
+}
+
+#sideMenu h2 {
+    font-weight: normal;
+    margin-bottom: 5px;
+    margin-top: 20px;
+    color: #aaa;
+    font-size: 1.25em;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #ddd;
+    width: calc(100% - 20px);
+}
+
+#sideMenu h2 button {
+    border: none;
+    background: none;
+    float: right;
+    color: #aaa;
+    font-size: 1em;
+}
+
+.sideMenuButtons div {
+    font-size: 1.25em;
+    line-height: 1.25em;
+    padding-bottom: 5px;
+    width: calc(100% - 30px);
+    box-shadow: 0px 1px 2px rgba(0,0,0, 0.4);
+    border-left: 2px solid #db9f9e;
+    margin: 10px 0px;
+    padding: 5px;
+}
+
+
+.sideMenuButtons div:before {
+    color: #db9f9e;
+    float: right;
+    padding-right: 5px;
+}
+
+/*
+    PROMPT 
+*/
+
+#closePrompt {
+    text-shadow: 0px 1px 2px rgba(0,0,0, 0.4);
+    color: #fff;
+    font-size: 2em;
+    background-color: Transparent;
+    border: 0;
+    position: fixed;
+    top: 5px;
+    right: 5px;
+    height: 50px;
+    width: 50px;
+    transition: color 0.25s;
+}
+
+#prompt {
+    position: fixed;
+    background-color: #fff;
+    height: 100%;
+    width: 100%;
+    z-index: 3;
+    background: url("assets/pinkMist.png");
+    opacity: 1;
+    transition: opacity 0.25s;
+}
+
+#prompt.close {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#prompt input[type="text"], #prompt input[type="password"] {
+    color: #666;
+    border: none;
+    display: block;
+    box-shadow: 0px 1px 2px rgba(0,0,0, 0.4);
+    background-color: #fff;
+    font-size: 1.5em;
+    padding: 5px;
+    width: calc(100% - 10px);
+    margin-bottom: 15px;
+}
+
+#prompt .form {
+    background-color: #fff;
+    padding: 15px;
+    width: calc(100% - 80px);
+    margin: auto;
+    margin-top: 50%;
+    box-shadow: 0px 1px 2px rgba(0,0,0, 0.4);
+    display: none;
+}
+
+#prompt.authenticate #authenticateForm.form, 
+#prompt.signup #signupForm.form, 
+#prompt.addroom #addroomForm.form,
+#prompt.adduser #adduserForm.form {
+    display: block;
+}
+
+#prompt .left {
+    border: none;
+    border-left: 2px solid #93d4e2;
+    background-color: #fff;
+    color: #65a4b2;
+    font-size: 1em;
+    box-shadow: 0px 1px 2px rgba(0,0,0, 0.4);
+    padding: 10px;
+}
+
+#prompt .right {
+    float: right;
+    border: none;
+    border-left: 2px solid #db9f9e;
+    background-color: #fff;
+    color: #db9f9e;
+    font-size: 1em;
+    box-shadow: 0px 1px 2px rgba(0,0,0, 0.4);
+    padding: 10px;
+}
