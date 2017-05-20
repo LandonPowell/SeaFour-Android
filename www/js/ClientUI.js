@@ -118,7 +118,7 @@ function changeRooms(room) {
         emit(['join', room]);
         emit(['giveRecent', room]);
 
-        attributes.activeRoom.push(room);
+        attributes.activeRooms.push(room);
         uiAttributes.recentMessages[room] = [];
         addButton("sideMenuRooms", room, "room");
 

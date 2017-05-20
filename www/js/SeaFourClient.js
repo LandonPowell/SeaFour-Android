@@ -29,7 +29,7 @@ function emit(message) {
 }
 
 function connect() {
-    socket = new WebSocket('wss://' + 'seafour-kitsumithefox.c9users.io/');
+    socket = new WebSocket('wss://' + attributes.domain);
 
     socket.onopen = function () {
         emit([ 'join', attributes.rooms[0] ]);
