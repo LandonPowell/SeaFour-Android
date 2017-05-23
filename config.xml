@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="io.cordova.hellocordova" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>HelloCordova</name>
+    <name>SeaFour</name>
     <description>
-        A sample Apache Cordova application that responds to the deviceready event.
+        SeaFour's mobile client. Features asymmetric cryptography and all that fun stuff.
     </description>
-    <author email="dev@cordova.apache.org" href="http://cordova.io">
+    <author email="landonjamespowell@gmail.com" href="http://seafour.club/">
         Apache Cordova Team
     </author>
     <content src="index.html" />
